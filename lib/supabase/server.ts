@@ -3,7 +3,7 @@ import { auth } from '@clerk/nextjs/server'
 
 export async function createServerClient() {
   const { getToken } = await auth()
-  const token = await getToken({ template: 'supabase' })
+  const token = await getToken()
 
   return createClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
