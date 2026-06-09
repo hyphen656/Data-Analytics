@@ -15,6 +15,8 @@ export async function GET() {
     clerkUserId: userId,
     hasToken: !!token,
     tokenPrefix: token?.slice(0, 30) + '...',
+    supabaseUrl: process.env.NEXT_PUBLIC_SUPABASE_URL ?? 'NOT SET',
+    supabaseKeySet: !!process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
     supabaseCount: count,
     supabaseError: error?.message ?? null,
   })
